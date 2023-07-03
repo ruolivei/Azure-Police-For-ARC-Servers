@@ -1,23 +1,23 @@
 # Azure-Police-For-ARC-Servers
-What Azure Policies you can use to automate Azure Monitor Agent installation on ARC Servers
+What Azure Policies can you use to automate Azure Monitor Agent installation on ARC Servers?
 
 ## Quick Intro
 
-Azure ARC for Servers is regarding adding an Agent on Non-Azure VMs and physical servers. Once that agent is installed on those VMs, they will "appear" on your Azure Portal under "Azure ARC | Servers".
+Azure ARC for Servers is regarding adding an Agent on Non-Azure VMs and physical servers. Once that agent is installed on those VMs, they will "appear" on your Azure Portal under "Azure ARC | Servers."
 
-This bring some benefits to your non-Azure (on-premises, AWS, GCP, others DCs) VMs. They are:
+This bring some benefits to your non-Azure (on-premises, AWS, GCP, other DCs) VMs. They are:
 
-- Azure automanage (VMs best practices on Azure. it still has some limitations for ARC machines)
+- Azure automanage (VMs best practices on Azure. It still has some limitations for ARC machines)
 - automatic onboard on MDC (Microsoft Defender for Cloud)
 - consequently, MDC will onboard those ARC machines on MDE (Microsoft Defender for Endpoint) ... you will need to check for OS compatibility
-- usage of Azure Automation
-- usage of Update Management service
-- usage of "some" Azure Policies on those ARC machines
-- one of the most common usage, ARC machines will be able to ingest logs on Log Analytics and Microsoft Sentinel
+- use of Azure Automation
+- Use of Update Management service
+- use of "some" Azure Policies on those ARC machines
+- one of the most common uses, ARC machines will be able to ingest logs on Log Analytics and Microsoft Sentinel
 
 ## Common steps
 
-Once you install ARC agent, as mentioned above, VMs will appear in your Azure environment.
+Once you install the ARC agent, as mentioned above, VMs will appear in your Azure environment.
 
 A very common second step is about installing Azure Monitor Agent (AMA) on those machines, so you may ingest Security logs into Log Analytics and Sentinel.
 You may accomplish this task at scale in two ways:
@@ -30,9 +30,9 @@ You may accomplish this task at scale in two ways:
 
 ## Setting the "correct" Azure Policies to install AMA on ARC machines
 
-First thing you will try is going to Azure Policy page and search for policies that install AMA on ARC machines. However, this apparently simple task is not so simple, as you will find over 38 policies (in the time this article was written - July 2023) that mention ARC, Hybrid and AMA or Azure Monitor Agent in the policy name.
+First thing you will try is going to Azure Policy page and searching for policies that install AMA on ARC machines. However, this simple task is more complex, as you will find over 38 policies (when this article was written - July 2023) that mention ARC, Hybrid and AMA or Azure Monitor Agent in the policy name.
 
-Here it is where this article may help you. Among those 38 policies, the two policies below WILL really INSTALL the AMA (not the MMA - legacy one) in your brand new added ARC machines on Azure:
+Here it is where this article may help you. Among those 38 policies, the two policies below WILL INSTALL the AMA (not the MMA - legacy one) in your brand new added ARC machines on Azure:
 
 <img width="1082" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/aae0dba5-4d13-487f-b15e-ceeb814a250c">
 
@@ -60,6 +60,9 @@ Policy to only audit if AMA doesn't exist on ARC machines
 ## Checking if AMA and others extension is installed on ARC machines
 
 An easy way to check if your AMA installation was successful is going to "Azure ARC | Servers" page, select the ARC machine you want to check, go to "Extensions" in the left menu and check for the extensions installed and see if the status says "Success". 
+
+In the example below, I have used three policies to deploy AMA and VM Insight on ARC machines. Remember that AMA installation require two policies, one to install AMA and another to associate the AMA with a DCR. The third policy is to install the VM insight and Service Map:
+
 
 <img width="1178" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/5fd5c973-6944-4e08-9655-e46a495079fa">
 
