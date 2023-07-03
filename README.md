@@ -10,3 +10,6 @@ Two main policies
 
 Adding VM Insights and Service Map
 <img width="1081" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/df79a86c-81b0-43df-9aee-d9ef94e49c6c">
+
+Policy to only audit if AMA doesnt exist on ARC machines
+<img width="1067" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/e762741c-4ca4-4473-bf09-3f13aa49b235">
