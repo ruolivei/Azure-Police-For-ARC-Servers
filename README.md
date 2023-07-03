@@ -72,10 +72,23 @@ Those were the agents installed under extension, so you may check them out:
 - AzureSecurityWindowsAgent
 - MDE.Windows
 
+<img width="1187" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/b54b6cfb-a1f0-4570-97cf-15bbe57fbb36">
 
+### DependencyAgentWindows
 
-###
+This agent is installed due to the policy "[Preview]: Configure Dependency agent on Azure Arc enabled Windows servers with Azure Monitoring Agent settings". It will collect VM insights metrics and provide ARC machines with a Service and ports mapping under Azure Monitor.
 
-###
+### AzureMonitorWindowsAgent
 
-###
+This is the AMA (Azure Monitor Agent) installed through the other two policies:
+
+- Configure Windows Arc-enabled machines to run Azure Monitor Agent
+- Configure Windows Arc Machines to be associated with a Data Collection Rule or a Data Collection Endpoint (this one associate the agent with a DCR and allow the ARC machine to collect logs according to DCR configuration)
+
+### AzureSecurityWindowsAgent
+
+This is the MDC (Microsoft Defender for Cloud) agent, installed automatically once the ARC machine has the ARC agent successfully installed and it showed on Azure ARC for servers page.
+
+### MDE.Windows
+
+Once your machine is onboarded on MDC, you have the Defender for Servers (under MDC) configured with the paid version (Plan 2), AND, you have a VM Operating System version compatible with MDE, then, your ARC machine will be onboarded automatically on MDE (Microsoft Defender for Endpoint). That is the reason you will have this agent under extension and that is good way to confirm that your ARC machine is onboarded on MDE.
