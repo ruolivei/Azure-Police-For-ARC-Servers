@@ -55,7 +55,6 @@ In case you want to add VM insight metrics and service map (port and services ma
 in case you decide to use DCR to deploy AMA at scale and not use Azure Policies to "deploy" the AMA, you may consider a policy to only "audit" and let you know what ARC machines didn't have the AMA installed.
 
 <img width="1067" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/e762741c-4ca4-4473-bf09-3f13aa49b235">
-Policy to only audit if AMA doesn't exist on ARC machines
 
 ## Checking if AMA and others extension is installed on ARC machines
 
