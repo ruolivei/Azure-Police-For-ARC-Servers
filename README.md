@@ -63,7 +63,19 @@ An easy way to check if your AMA installation was successful is going to "Azure 
 
 In the example below, I have used three policies to deploy AMA and VM Insight on ARC machines. Remember that AMA installation require two policies, one to install AMA and another to associate the AMA with a DCR. The third policy is to install the VM insight and Service Map:
 
+<img width="1078" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/86312ac4-cfe2-4afd-9f7d-289268126092">
 
-<img width="1178" alt="image" src="https://github.com/ruolivei/Azure-Police-For-ARC-Servers/assets/16666958/5fd5c973-6944-4e08-9655-e46a495079fa">
+Those were the agents installed under extension, so you may check them out:
 
-In the above screen you may check some of the extensions installed through Azure policies automated deployment.
+- DependencyAgentWindows
+- AzureMonitorWindowsAgent
+- AzureSecurityWindowsAgent
+- MDE.Windows
+
+
+
+###
+
+###
+
+###
